@@ -1,0 +1,602 @@
+[
+ {
+   "gender": "Female",
+   "age": "18-19",
+   "ethnicity": "White",
+   "percentage": 1.706923179
+ },
+ {
+   "gender": "Female",
+   "age": "18-19",
+   "ethnicity": "Mixed",
+   "percentage": 0.07391678
+ },
+ {
+   "gender": "Female",
+   "age": "18-19",
+   "ethnicity": "Asian",
+   "percentage": 0.179841039
+ },
+ {
+   "gender": "Female",
+   "age": "18-19",
+   "ethnicity": "Black",
+   "percentage": 0.083835802
+ },
+ {
+   "gender": "Female",
+   "age": "18-19",
+   "ethnicity": "Other",
+   "percentage": 0.022079857
+ },
+ {
+   "gender": "Female",
+   "age": "20-24",
+   "ethnicity": "White",
+   "percentage": 4.407414131
+ },
+ {
+   "gender": "Female",
+   "age": "20-24",
+   "ethnicity": "Mixed",
+   "percentage": 0.168176154
+ },
+ {
+   "gender": "Female",
+   "age": "20-24",
+   "ethnicity": "Asian",
+   "percentage": 0.567279177
+ },
+ {
+   "gender": "Female",
+   "age": "20-24",
+   "ethnicity": "Black",
+   "percentage": 0.206963543
+ },
+ {
+   "gender": "Female",
+   "age": "20-24",
+   "ethnicity": "Other",
+   "percentage": 0.062845317
+ },
+ {
+   "gender": "Female",
+   "age": "25-29",
+   "ethnicity": "White",
+   "percentage": 4.426833626
+ },
+ {
+   "gender": "Female",
+   "age": "25-29",
+   "ethnicity": "Mixed",
+   "percentage": 0.141684339
+ },
+ {
+   "gender": "Female",
+   "age": "25-29",
+   "ethnicity": "Asian",
+   "percentage": 0.640327325
+ },
+ {
+   "gender": "Female",
+   "age": "25-29",
+   "ethnicity": "Black",
+   "percentage": 0.222644771
+ },
+ {
+   "gender": "Female",
+   "age": "25-29",
+   "ethnicity": "Other",
+   "percentage": 0.079332107
+ },
+ {
+   "gender": "Female",
+   "age": "30-34",
+   "ethnicity": "White",
+   "percentage": 4.205547703
+ },
+ {
+   "gender": "Female",
+   "age": "30-34",
+   "ethnicity": "Mixed",
+   "percentage": 0.114283758
+ },
+ {
+   "gender": "Female",
+   "age": "30-34",
+   "ethnicity": "Asian",
+   "percentage": 0.642726811
+ },
+ {
+   "gender": "Female",
+   "age": "30-34",
+   "ethnicity": "Black",
+   "percentage": 0.240284003
+ },
+ {
+   "gender": "Female",
+   "age": "30-34",
+   "ethnicity": "Other",
+   "percentage": 0.076195861
+ },
+ {
+   "gender": "Female",
+   "age": "35-40",
+   "ethnicity": "White",
+   "percentage": 4.450782617
+ },
+ {
+   "gender": "Female",
+   "age": "35-40",
+   "ethnicity": "Mixed",
+   "percentage": 0.093909629
+ },
+ {
+   "gender": "Female",
+   "age": "35-40",
+   "ethnicity": "Asian",
+   "percentage": 0.536237799
+ },
+ {
+   "gender": "Female",
+   "age": "35-40",
+   "ethnicity": "Black",
+   "percentage": 0.232847603
+ },
+ {
+   "gender": "Female",
+   "age": "35-40",
+   "ethnicity": "Other",
+   "percentage": 0.06497246
+ },
+ {
+   "gender": "Female",
+   "age": "40-44",
+   "ethnicity": "White",
+   "percentage": 5.114365175
+ },
+ {
+   "gender": "Female",
+   "age": "40-44",
+   "ethnicity": "Mixed",
+   "percentage": 0.086972047
+ },
+ {
+   "gender": "Female",
+   "age": "40-44",
+   "ethnicity": "Asian",
+   "percentage": 0.426695677
+ },
+ {
+   "gender": "Female",
+   "age": "40-44",
+   "ethnicity": "Black",
+   "percentage": 0.25621464
+ },
+ {
+   "gender": "Female",
+   "age": "40-44",
+   "ethnicity": "Other",
+   "percentage": 0.053281774
+ },
+ {
+   "gender": "Female",
+   "age": "45-49",
+   "ethnicity": "White",
+   "percentage": 5.26301863
+ },
+ {
+   "gender": "Female",
+   "age": "45-49",
+   "ethnicity": "Mixed",
+   "percentage": 0.073965515
+ },
+ {
+   "gender": "Female",
+   "age": "45-49",
+   "ethnicity": "Asian",
+   "percentage": 0.322689286
+ },
+ {
+   "gender": "Female",
+   "age": "45-49",
+   "ethnicity": "Black",
+   "percentage": 0.239337969
+ },
+ {
+   "gender": "Female",
+   "age": "45-49",
+   "ethnicity": "Other",
+   "percentage": 0.041622624
+ },
+ {
+   "gender": "Female",
+   "age": "50-54",
+   "ethnicity": "White",
+   "percentage": 4.676681171
+ },
+ {
+   "gender": "Female",
+   "age": "50-54",
+   "ethnicity": "Mixed",
+   "percentage": 0.048009786
+ },
+ {
+   "gender": "Female",
+   "age": "50-54",
+   "ethnicity": "Asian",
+   "percentage": 0.288267987
+ },
+ {
+   "gender": "Female",
+   "age": "50-54",
+   "ethnicity": "Black",
+   "percentage": 0.157391368
+ },
+ {
+   "gender": "Female",
+   "age": "50-54",
+   "ethnicity": "Other",
+   "percentage": 0.032847443
+ },
+ {
+   "gender": "Female",
+   "age": "55-59",
+   "ethnicity": "White",
+   "percentage": 4.227590292
+ },
+ {
+   "gender": "Female",
+   "age": "55-59",
+   "ethnicity": "Mixed",
+   "percentage": 0.029777133
+ },
+ {
+   "gender": "Female",
+   "age": "55-59",
+   "ethnicity": "Asian",
+   "percentage": 0.24458129
+ },
+ {
+   "gender": "Female",
+   "age": "55-59",
+   "ethnicity": "Black",
+   "percentage": 0.089328532
+ },
+ {
+   "gender": "Female",
+   "age": "55-59",
+   "ethnicity": "Other",
+   "percentage": 0.025127233
+ },
+ {
+   "gender": "Female",
+   "age": "60-64",
+   "ethnicity": "White",
+   "percentage": 4.646445355
+ },
+ {
+   "gender": "Female",
+   "age": "60-64",
+   "ethnicity": "Mixed",
+   "percentage": 0.023051692
+ },
+ {
+   "gender": "Female",
+   "age": "60-64",
+   "ethnicity": "Asian",
+   "percentage": 0.182914215
+ },
+ {
+   "gender": "Female",
+   "age": "60-64",
+   "ethnicity": "Black",
+   "percentage": 0.057257983
+ },
+ {
+   "gender": "Female",
+   "age": "60-64",
+   "ethnicity": "Other",
+   "percentage": 0.018751538
+ },
+  {
+    "gender": "Male",
+    "age": "18-19",
+    "ethnicity": "White",
+    "percentage": 1.746960479
+  },
+  {
+    "gender": "Male",
+    "age": "18-19",
+    "ethnicity": "Mixed",
+    "percentage": 0.071844106
+  },
+  {
+    "gender": "Male",
+    "age": "18-19",
+    "ethnicity": "Asian",
+    "percentage": 0.193446726
+  },
+  {
+    "gender": "Male",
+    "age": "18-19",
+    "ethnicity": "Black",
+    "percentage": 0.080797026
+  },
+  {
+    "gender": "Male",
+    "age": "18-19",
+    "ethnicity": "Other",
+    "percentage": 0.026285408
+  },
+  {
+    "gender": "Male",
+    "age": "20-24",
+    "ethnicity": "White",
+    "percentage": 4.441798162
+  },
+  {
+    "gender": "Male",
+    "age": "20-24",
+    "ethnicity": "Mixed",
+    "percentage": 0.165174647
+  },
+  {
+    "gender": "Male",
+    "age": "20-24",
+    "ethnicity": "Asian",
+    "percentage": 0.617057759
+  },
+  {
+    "gender": "Male",
+    "age": "20-24",
+    "ethnicity": "Black",
+    "percentage": 0.194077415
+  },
+  {
+    "gender": "Male",
+    "age": "20-24",
+    "ethnicity": "Other",
+    "percentage": 0.083706797
+  },
+  {
+    "gender": "Male",
+    "age": "25-29",
+    "ethnicity": "White",
+    "percentage": 4.391712835
+  },
+  {
+    "gender": "Male",
+    "age": "25-29",
+    "ethnicity": "Mixed",
+    "percentage": 0.141727341
+  },
+  {
+    "gender": "Male",
+    "age": "25-29",
+    "ethnicity": "Asian",
+    "percentage": 0.650816834
+  },
+  {
+    "gender": "Male",
+    "age": "25-29",
+    "ethnicity": "Black",
+    "percentage": 0.198601177
+  },
+  {
+    "gender": "Male",
+    "age": "25-29",
+    "ethnicity": "Other",
+    "percentage": 0.104992559
+  },
+  {
+    "gender": "Male",
+    "age": "30-34",
+    "ethnicity": "White",
+    "percentage": 4.199473019
+  },
+  {
+    "gender": "Male",
+    "age": "30-34",
+    "ethnicity": "Mixed",
+    "percentage": 0.113584267
+  },
+  {
+    "gender": "Male",
+    "age": "30-34",
+    "ethnicity": "Asian",
+    "percentage": 0.644776551
+  },
+  {
+    "gender": "Male",
+    "age": "30-34",
+    "ethnicity": "Black",
+    "percentage": 0.213324904
+  },
+  {
+    "gender": "Male",
+    "age": "30-34",
+    "ethnicity": "Other",
+    "percentage": 0.110737565
+  },
+  {
+    "gender": "Male",
+    "age": "35-40",
+    "ethnicity": "White",
+    "percentage": 4.388459052
+  },
+  {
+    "gender": "Male",
+    "age": "35-40",
+    "ethnicity": "Mixed",
+    "percentage": 0.087880813
+  },
+  {
+    "gender": "Male",
+    "age": "35-40",
+    "ethnicity": "Asian",
+    "percentage": 0.547426799
+  },
+  {
+    "gender": "Male",
+    "age": "35-40",
+    "ethnicity": "Black",
+    "percentage": 0.206103512
+  },
+  {
+    "gender": "Male",
+    "age": "35-40",
+    "ethnicity": "Other",
+    "percentage": 0.090624311
+  },
+  {
+    "gender": "Male",
+    "age": "40-44",
+    "ethnicity": "White",
+    "percentage": 5.002698777
+  },
+  {
+    "gender": "Male",
+    "age": "40-44",
+    "ethnicity": "Mixed",
+    "percentage": 0.082886901
+  },
+  {
+    "gender": "Male",
+    "age": "40-44",
+    "ethnicity": "Asian",
+    "percentage": 0.426738678
+  },
+  {
+    "gender": "Male",
+    "age": "40-44",
+    "ethnicity": "Black",
+    "percentage": 0.231580491
+  },
+  {
+    "gender": "Male",
+    "age": "40-44",
+    "ethnicity": "Other",
+    "percentage": 0.069708362
+  },
+  {
+    "gender": "Male",
+    "age": "45-49",
+    "ethnicity": "White",
+    "percentage": 5.164224026
+  },
+  {
+    "gender": "Male",
+    "age": "45-49",
+    "ethnicity": "Mixed",
+    "percentage": 0.070075309
+  },
+  {
+    "gender": "Male",
+    "age": "45-49",
+    "ethnicity": "Asian",
+    "percentage": 0.308951728
+  },
+  {
+    "gender": "Male",
+    "age": "45-49",
+    "ethnicity": "Black",
+    "percentage": 0.217200776
+  },
+  {
+    "gender": "Male",
+    "age": "45-49",
+    "ethnicity": "Other",
+    "percentage": 0.054176206
+  },
+  {
+    "gender": "Male",
+    "age": "50-54",
+    "ethnicity": "White",
+    "percentage": 4.616307009
+  },
+  {
+    "gender": "Male",
+    "age": "50-54",
+    "ethnicity": "Mixed",
+    "percentage": 0.044847739
+  },
+  {
+    "gender": "Male",
+    "age": "50-54",
+    "ethnicity": "Asian",
+    "percentage": 0.276846779
+  },
+  {
+    "gender": "Male",
+    "age": "50-54",
+    "ethnicity": "Black",
+    "percentage": 0.142300695
+  },
+  {
+    "gender": "Male",
+    "age": "50-54",
+    "ethnicity": "Other",
+    "percentage": 0.041725827
+  },
+  {
+    "gender": "Male",
+    "age": "55-59",
+    "ethnicity": "White",
+    "percentage": 4.142252304
+  },
+  {
+    "gender": "Male",
+    "age": "55-59",
+    "ethnicity": "Mixed",
+    "percentage": 0.02747225
+  },
+  {
+    "gender": "Male",
+    "age": "55-59",
+    "ethnicity": "Asian",
+    "percentage": 0.233099879
+  },
+  {
+    "gender": "Male",
+    "age": "55-59",
+    "ethnicity": "Black",
+    "percentage": 0.076442404
+  },
+  {
+    "gender": "Male",
+    "age": "55-59",
+    "ethnicity": "Other",
+    "percentage": 0.031878475
+  },
+  {
+    "gender": "Male",
+    "age": "60-64",
+    "ethnicity": "White",
+    "percentage": 4.517718813
+  },
+  {
+    "gender": "Male",
+    "age": "60-64",
+    "ethnicity": "Mixed",
+    "percentage": 0.019623036
+  },
+  {
+    "gender": "Male",
+    "age": "60-64",
+    "ethnicity": "Asian",
+    "percentage": 0.005627468
+  },
+  {
+    "gender": "Male",
+    "age": "60-64",
+    "ethnicity": "Black",
+    "percentage": 0.042723463
+  },
+  {
+    "gender": "Male",
+    "age": "60-64",
+    "ethnicity": "Other",
+    "percentage": 0.022429603
+  }
+]
