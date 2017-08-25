@@ -1,4 +1,4 @@
-import * as data from './data/allpple.json';
+import * as data from '../data/allpple.json';
 // const data = JSON.parse(jsonData);
 
 function getPeople(num){
@@ -9,7 +9,6 @@ function getPeople(num){
   for(let i = 0; i < num; i++){
     let personNum = generateRandomNumber();
     let person = findPerson(personNum);
-    console.log("PERSON", person);
     people.push(person);
   }
   return people;
