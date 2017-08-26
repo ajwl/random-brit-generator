@@ -11,6 +11,7 @@ function getPeople(num){
     let person = findPerson(personNum);
     people.push(person);
   }
+  console.log("PEOPLE SHD BE ARRAH", people);
   return people;
 };
 
