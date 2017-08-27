@@ -23,6 +23,56 @@
   to { transform: rotate(360deg); }
 }
 
+.App-container{
+  display: flex;
+  flex-direction: column;
+}
+.App-container ul,
+.App-container div,
+.App-container form {
+  flex: 0 1 auto;
+}
+.App-container form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.App-container form input{
+  flex: 0 1 auto;
+  margin: 1em;
+}
+
 ul {
   list-style: none;
+  min-height: 10em;
+  padding: 0;
+}
+ul li {
+  margin: .2em 0;
+}
+
+input.people-input {
+  outline: none;
+  max-width: 10em;
+  min-width: 7em;
+  padding: 7px;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 3px solid #ddd;
+  text-align: center;
+}
+
+input[type="submit"]{
+  background-color: #d5dae0;
+  min-width: 5em;
+}
+
+.info {
+  padding: 1em;
+}
+.info p{
+  font-size: 10px;
+  font-weight: 300;
+  font-style: italic;
 }

@@ -8,10 +8,12 @@ class NumberInput extends Component {
   }
 
   render(){
-    console.log("HELP", this.props);
     return (
       <form onSubmit={this.props.onSubmit} className="input-number">
-        <input type="text" value={this.props.value} onChange={this.props.onChange} />
+        <input className="people-input" type="text"
+          value={this.props.value}
+          onChange={this.props.onChange}
+          onClick={this.props.onClick} />
         <input type="submit" value="Get People"/>
       </form>
     )
@@ -19,9 +21,10 @@ class NumberInput extends Component {
 };
 
 NumberInput.propTypes = {
-    value: React.PropTypes.number,
+    value: React.PropTypes.string,
     onSubmit: React.PropTypes.func,
     onChange: React.PropTypes.func,
+    onClick: React.PropTypes.func,
 };
 
 export default NumberInput;
