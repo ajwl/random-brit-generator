@@ -3,14 +3,14 @@ import logo from '../images/logo.svg';
 import '../styles/App.css';
 import {getPeople} from '../lib/generator.js';
 import {List} from './OutputList.js';
-import {NumberInput} from './NumberInput.js'
+import NumberInput from './NumberInput.js'
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       people: [],
-      numberPeople: '',
+      numberPeople: 0,
     };
     this.handleNumberChange = this.handleNumberChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,6 +40,7 @@ class App extends Component {
         </div>
         <NumberInput onSubmit={this.handleSubmit} onChange={this.handleNumberChange} value ={this.state.numberPeople} />
         <List items={this.state.people} />
+
       </div>
     );
   }

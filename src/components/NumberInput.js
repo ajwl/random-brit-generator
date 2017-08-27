@@ -1,12 +1,27 @@
-import React from "react";
+import React, {Component} from 'react';
+import {getPeople} from '../lib/generator.js';
 
-const NumberInput = (props) => {
-  return (
-    <form onSubmit={props.handleSubmit} className="input-number">
-      <input type="text" value={props.value} onChange={props.handleNumberChange}/>
-      <input type="submit" value="Get People"/>
-    </form>
-  )
-}
+class NumberInput extends Component {
 
-export {NumberInput};
+  constructor(props){
+    super(props);
+  }
+
+  render(){
+    console.log("HELP", this.props);
+    return (
+      <form onSubmit={this.props.onSubmit} className="input-number">
+        <input type="text" value={this.props.value} onChange={this.props.onChange} />
+        <input type="submit" value="Get People"/>
+      </form>
+    )
+  }
+};
+
+NumberInput.propTypes = {
+    value: React.PropTypes.number,
+    onSubmit: React.PropTypes.func,
+    onChange: React.PropTypes.func,
+};
+
+export default NumberInput;
