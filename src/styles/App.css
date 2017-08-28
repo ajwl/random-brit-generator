@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.App-logo {
+.App-top-image {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
@@ -22,10 +22,17 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.App-header h2{
+  margin-bottom: 2px;
+}
+.App-header span{
+  font-size: 9px;
+}
 
 .App-container{
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .App-container ul,
 .App-container div,
@@ -36,6 +43,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 1.5em 1em;
 }
 .App-container form input{
   flex: 0 1 auto;
@@ -44,7 +52,7 @@
 
 ul {
   list-style: none;
-  min-height: 10em;
+  min-height: 8em;
   padding: 0;
 }
 ul li {
@@ -61,18 +69,27 @@ input.people-input {
   border-left: none;
   border-bottom: 3px solid #ddd;
   text-align: center;
+  font-size: 20px;
 }
 
 input[type="submit"]{
   background-color: #d5dae0;
-  min-width: 5em;
+  width: 7em;
+  height: 7em;
+  border-radius: 50%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .info {
   padding: 1em;
+  max-width: 30em;
 }
 .info p{
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 300;
-  font-style: italic;
 }

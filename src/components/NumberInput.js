@@ -1,30 +1,28 @@
 import React, {Component} from 'react';
-import {getPeople} from '../lib/generator.js';
 
 class NumberInput extends Component {
 
   constructor(props){
     super(props);
+    this.handleClear = this.handleClear.bind(this);
+  }
+
+  handleClear(e) {
+    e.target.value = '';
   }
 
   render(){
     return (
       <form onSubmit={this.props.onSubmit} className="input-number">
-        <input className="people-input" type="text"
+        <label> How many people do you want to generate? </label>
+        <input className="people-input" type="number"
           value={this.props.value}
           onChange={this.props.onChange}
-          onClick={this.props.onClick} />
+          onClick={this.handleClear} />
         <input type="submit" value="Get People"/>
       </form>
     )
   }
-};
-
-NumberInput.propTypes = {
-    value: React.PropTypes.string,
-    onSubmit: React.PropTypes.func,
-    onChange: React.PropTypes.func,
-    onClick: React.PropTypes.func,
 };
 
 export default NumberInput;

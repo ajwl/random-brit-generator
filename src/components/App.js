@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import logo from '../images/logo.svg';
+import engWales from '../images/eng-wales.png';
 import '../styles/App.css';
 import {getPeople} from '../lib/generator.js';
 import {List} from './OutputList.js';
@@ -11,11 +11,10 @@ class App extends Component {
     super(props);
     this.state = {
       people: [],
-      numberPeople: '0',
+      numberPeople: '',
     };
     this.handleNumberChange = this.handleNumberChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleClear = this.handleClear.bind(this);
   }
 
   handleNumberChange(e) {
@@ -32,25 +31,19 @@ class App extends Component {
     e.preventDefault();
   };
 
-  handleClear(e) {
-    console.log("this fired");
-    this.setState((prevState, props) => {
-      return {numberPeople: '0'};
-    });
-  }
-
   render() {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo"/>
-          <h2>Who are the people?</h2>
+          <img src={engWales} className="App-top-image" alt="logo"/>
+          <h2>Generate random Brits*</h2>
+          <span>*According to demographic data from Engand & Wales 2011</span>
         </div>
         <div className="App-container">
           <NumberInput onSubmit={this.handleSubmit}
             onChange={this.handleNumberChange}
             value ={this.state.numberPeople}
-            onClick = {this.state.handleClear}/>
+            onFocus = {this.state.handleClear}/>
           <List items={this.state.people} />
           <InfoBox value={this.state.numberPeople} />
         </div>

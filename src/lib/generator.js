@@ -1,5 +1,4 @@
 import * as data from '../data/allpple.json';
-// const data = JSON.parse(jsonData);
 
 function getPeople(num){
 
@@ -7,11 +6,10 @@ function getPeople(num){
   const people = [];
 
   for(let i = 0; i < num; i++){
-    let personNum = generateRandomNumber();
+    let personNum = generateRandomNumber(total);
     let person = findPerson(personNum);
     people.push(person);
   }
-  console.log("PEOPLE SHD BE ARRAH", people);
   return people;
 };
 
@@ -28,8 +26,8 @@ function findPerson(personNum){
   return personSegment;
 }
 
-function generateRandomNumber(){
-    return Math.random().toFixed(11) * 100;
+function generateRandomNumber(total){
+    return Math.random().toFixed(11) * total;
 }
 
 function sumDemographicProbability(data){
