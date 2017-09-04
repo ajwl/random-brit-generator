@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import engWales from '../images/eng-wales.png';
-import '../styles/App.css';
-import {getPeople} from '../lib/generator.js';
-import {List} from './OutputList.js';
-import {InfoBox} from './InfoBox.js';
+import '../../styles/App.css';
+import {getPeople} from '../../lib/generator.js';
+import {List} from '../presentational/OutputList.js';
+import {InfoBox} from '../presentational/InfoBox.js';
 import NumberInput from './NumberInput.js';
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
     super(props);
     this.state = {
       people: [],
-      numberPeople: '',
+      numberPeople: 3,
     };
     this.handleNumberChange = this.handleNumberChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

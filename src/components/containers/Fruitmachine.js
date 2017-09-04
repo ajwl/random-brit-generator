@@ -1,11 +1,14 @@
 import React, {Component} from "react";
+import '../../styles/App.css';
+import '../../styles/Machine.css';
+import Machine from '../presentational/Machine';
 
 class Fruitmachine extends Component {
 
   render(){
     return(
-      <div>
-        <h2> heloooooo </h2>
+      <div className="App">
+        <Machine />
       </div>
     )
   }
