@@ -5,8 +5,8 @@ const Machine = (props) => {
   return (
     <div className="machine">
       <h2> heloooooo </h2>
-      <Spinner />
-      <button>Run the machine</button>
+      <Spinner age={props.age} ethnicity={props.ethnicity} gender={props.gender}/>
+      <button onClick={props.rerunSpinner}>Run the machine</button>
     </div>
   )
 };

@@ -1,13 +1,13 @@
 import React from "react";
 
-const Spinner = () => {
+const Spinner = (props) => {
 
   return (
-    <div className="spinner">
-      <div className="window"></div>
-      <div className="window"></div>
-      <div className="window"></div>
-    </div>
+      <div className="spinner">
+        <div className="window"></div>
+        <div className="window"></div>
+        <div className="window"></div>
+      </div>
   )
 }
 
