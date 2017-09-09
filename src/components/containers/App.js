@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import engWales from '../images/eng-wales.png';
+import engWales from '../../images/eng-wales.png';
 import '../../styles/App.css';
 import {getPeople} from '../../lib/generator.js';
 import {List} from '../presentational/OutputList.js';

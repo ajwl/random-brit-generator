@@ -1,18 +1,43 @@
 .machine {
   padding: 0 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.machine div,
+.machine h2,
+.machine button {
+  flex: 1 1 auto;
 }
 .machine .spinner {
   max-width: 600px;
   width: 100%;
   height: 5em;
   border: 4px solid gray;
+  margin: 1em 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  overflow: hidden;
 }
 .spinner .window{
   flex: 1 1 auto;
   background-color: pink;
   width: 30%;
   border: 1px solid gray;
+  height: 300px;
+}
+.spinner .window:first-of-type{
+  background-image: url(http://r.ddmcdn.com/s_f/o_1/cx_462/cy_245/cw_1349/ch_1349/w_720/APL/uploads/2015/06/caturday-shutterstock_149320799.jpg);
+  animation-duration: 3s;
+  animation-name: rolldown;
+}
+
+@keyframes rolldown {
+  from{
+    top: 200;
+  }
+  to{
+    top: 0;
+  }
 }
