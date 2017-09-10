@@ -12,7 +12,7 @@
 .machine .spinner {
   max-width: 600px;
   width: 100%;
-  height: 5em;
+  height: 10em;
   border: 4px solid gray;
   margin: 1em 0;
   display: flex;
@@ -22,31 +22,62 @@
   position: relative
 }
 .spinner .window{
-  /*flex: 1 1 auto;*/
   background-color: pink;
   width: 30%;
   border: 1px solid gray;
-  height: 600px;
+  height: 700px;
   position: absolute;
+  top: -320px;
   background-image: url(http://r.ddmcdn.com/s_f/o_1/cx_462/cy_245/cw_1349/ch_1349/w_720/APL/uploads/2015/06/caturday-shutterstock_149320799.jpg);
   background-size: contain;
   backgroud-repeat: repeat-y;
-
 }
-.spinner .window:first-of-type{
-  animation-duration: 1.5s;
+.spinner .window span{
+  color: white;
+  position: absolute;
+  top: 320px;
+}
+.spinner.animate .window{
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-out;
   animation-name: rolldown;
+}
+.spinner.animate .window:first-of-type{
+  animation-duration: 1.5s;
+}
+.spinner.animate .window:nth-of-type(2){
+  animation-duration: 4s;
+}
+.spinner.animate .window:nth-of-type(3){
+  animation-duration: 4.5s;
+}
+.spinner.slow-to-end .window{
+  animation-name: rollstop;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+}
+
+.spinner .window:first-of-type{
   left: 0%;
 }
 .spinner .window:nth-of-type(2){
-  animation-duration: 4s;
-  animation-name: rolldown;
   left: 33%;
 }
 .spinner .window:nth-of-type(3){
-  animation-duration: 4.5s;
-  animation-name: rolldown;
   left: 66%;
+}
+.machine button {
+  background-color: cyan;
+  height: 7em;
+  width: 7em;
+  margin: 0 2em;
+}
+
+@keyframes rollstop {
+  to{
+    top: -300px;
+  }
 }
 
 @keyframes rolldown {
