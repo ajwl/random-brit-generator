@@ -4,6 +4,11 @@ import '../../styles/Machine.css';
 import Machine from '../presentational/Machine';
 import {getPeople} from '../../lib/generator.js';
 
+// testing out this css animation helper
+import EnsureAnimation from 'ensure-animation';
+const spinner = new EnsureAnimation('.spinner');
+
+
 class Fruitmachine extends Component {
   constructor(props){
     super(props);
@@ -23,11 +28,15 @@ class Fruitmachine extends Component {
     this.setState({age: person.age});
     this.setState({ethnicity: person.ethnicity});
     this.setState({animate: 'animate'});
+
+    console.log(spinner);
+    spinner.restart();
   }
 
   clearAnimation(){
     console.log('this ran')
-    this.setState({animate: 'slow-to-end'});
+    spinner.finish()
+    // this.setState({animate: ''});
   }
 
   render(){

@@ -80,6 +80,9 @@ input[type="submit"]{
   border-radius: 50%;
   font-size: 1em;
 }
+input[type="submit"]:focus{
+  outline: 0;
+}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
