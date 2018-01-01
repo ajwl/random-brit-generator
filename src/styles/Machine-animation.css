@@ -1,0 +1,48 @@
+.spinner.animate .wheel{
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+.spinner.animate .wheel{
+  animation-duration: 2s;
+}
+.spinner.slow-to-end .wheel{
+  animation-name: rollstop;
+  animation-duration: 1s;
+}
+
+@keyframes spin1 {
+	from {transform: rotateX(0);}
+	to { transform: rotateX(287deg); }
+}
+
+@keyframes spin2 {
+	from {transform: rotateX(0);}
+	to { transform: rotateX(395.5deg); }
+}
+
+@keyframes spin3 {
+	from {transform: rotateX(0);}
+	to { transform: rotateX(140deg); }
+}
+
+.spinner.animate .wheel .age {-webkit-animation-name:spin1;	-moz-animation-name:spin1;	animation-name: spin1;}
+.spinner.animate .wheel .ethnicity {-webkit-animation-name:spin1 ;	-moz-animation-name:spin1;	animation-name: spin1;}
+.spinner.animate .wheel .gender {	-webkit-animation-name:spin1;	-moz-animation-name:spin1;	animation-name:spin1;}
+
+.age {
+	-webkit-animation:2s linear 2 forwards;
+	-moz-animation:2s linear 2 forwards;
+	animation:2s linear 2 forwards;
+}
+.ethnicity {
+	-webkit-animation: 1.5s linear 2 forwards;
+	-moz-animation: 1.5s linear 2 forwards;
+	animation:1.5s linear 2 forwards;
+}
+.gender {
+	-webkit-animation:1s linear 2 forwards;
+	-moz-animation:1s linear 2 forwards;
+	animation:1s linear 2 forwards;
+}

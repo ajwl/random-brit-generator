@@ -1,7 +1,9 @@
 import React, {Component} from "react";
+import { CSSTransitionGroup } from 'react-transition-group'
 import '../../styles/App.css';
 import '../../styles/Machine.css';
-import Machine from '../presentational/Machine';
+import '../../styles/Machine-animation.css';
+import Machine from './Machine.js';
 import {getPeople} from '../../lib/generator.js';
 
 // testing out this css animation helper
@@ -30,13 +32,11 @@ class Fruitmachine extends Component {
     this.setState({animate: 'animate'});
 
     console.log(spinner);
-    spinner.restart();
   }
 
   clearAnimation(){
     console.log('this ran')
-    spinner.finish()
-    // this.setState({animate: ''});
+    this.setState({animate: ''});
   }
 
   render(){

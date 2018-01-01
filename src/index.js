@@ -15,4 +15,5 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById('root')
 );
+console.log(process.env)
 registerServiceWorker();

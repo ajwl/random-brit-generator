@@ -4,10 +4,13 @@
   flex-direction: column;
   align-items: center;
 }
-.machine div,
+.machine ol,
 .machine h2,
 .machine button {
   flex: 1 1 auto;
+}
+.machine ol {
+  list-style: none;
 }
 .machine .spinner {
   max-width: 600px;
@@ -19,72 +22,80 @@
   flex-direction: row;
   justify-content: space-between;
   overflow: hidden;
-  position: relative
-}
-.spinner .window{
-  background-color: pink;
-  width: 30%;
-  border: 1px solid gray;
-  height: 700px;
-  position: absolute;
-  top: -320px;
-  background-image: url(http://r.ddmcdn.com/s_f/o_1/cx_462/cy_245/cw_1349/ch_1349/w_720/APL/uploads/2015/06/caturday-shutterstock_149320799.jpg);
-  background-size: contain;
-  backgroud-repeat: repeat-y;
-}
-.spinner .window span{
-  color: white;
-  position: absolute;
-  top: 320px;
-}
-.spinner.animate .window{
-  animation-iteration-count: 6;
-  animation-direction: reverse;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-  animation-name: rolldown;
-}
-.spinner.animate .window:first-of-type{
-  animation-duration: 1.5s;
-}
-.spinner.animate .window:nth-of-type(2){
-  animation-duration: 4s;
-}
-.spinner.animate .window:nth-of-type(3){
-  animation-duration: 4.5s;
-}
-.spinner.slow-to-end .window{
-  animation-name: rollstop;
-  animation-duration: 3s;
+  position: relative;
+
+  -webkit-transition: -webkit-transform 2s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transition: -webkit-transform 2s;
+  -moz-transform-style: preserve-3d;
+  transition: -webkit-transform 2s;
+  transform-style: preserve-3d;
 }
 
-.spinner .window:first-of-type{
+.wheel {
+  border: 1px solid gray;
+  width: 30%;
+	/*position: relative;*/
+	margin: 0 auto;
+	/*height: 50px;*/
+	width: 50px;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	margin:0 0 0 10px;
+}
+
+
+/* STYLES STOLENT FROM CODEPEN */
+
+.container {
+	-webkit-perspective: 800; /* For compatibility with iPhone 3.0, we leave off the units here */
+	-webkit-perspective-origin: 50% 225px;
+	-moz-perspective: 800px;
+	-moz-perspective-origin: 50% 225px;
+	perspective: 800px;
+	perspective-origin: 50% 225px;
+	margin:auto;
+	left:100px;
+	z-index:99;
+}
+
+
+
+/* ---------- wheel styles ------------- */
+.wheel .one { transform: translateZ(90px); }
+.wheel .two { transform: rotateX(-36deg) translateZ(90px); }
+.wheel .three { transform: rotateX(-72deg) translateZ(90px); }
+.wheel .four { transform: rotateX(-108deg) translateZ(90px); }
+.wheel .five { transform: rotateX(-144deg) translateZ(90px); }
+.wheel .six { transform: rotateX(-180deg) translateZ(90px); }
+.wheel .seven { transform: rotateX(-216deg) translateZ(90px); }
+.wheel .eight { transform: rotateX(-252deg) translateZ(90px); }
+.wheel .nine { transform: rotateX(-288deg) translateZ(90px); }
+.wheel .ten { transform: rotateX(-324deg) translateZ(90px); }
+
+.spinner .wheel:first-of-type{
   left: 0%;
 }
-.spinner .window:nth-of-type(2){
+.spinner .wheel:nth-of-type(2){
   left: 33%;
 }
-.spinner .window:nth-of-type(3){
+.spinner .wheel:nth-of-type(3){
   left: 66%;
+}
+
+.spinner .wheel li{
+  color: white;
+  top: 320px;
+  width: 90%;
+  height: 10%;
+  margin-left: 5%;
+  background-image: url(http://r.ddmcdn.com/s_f/o_1/cx_462/cy_245/cw_1349/ch_1349/w_720/APL/uploads/2015/06/caturday-shutterstock_149320799.jpg);
+  background-size: cover;
 }
 .machine button {
   background-color: cyan;
   height: 7em;
   width: 7em;
   margin: 0 2em;
-}
-
-@keyframes rollstop {
-  to{
-    top: -300px;
-  }
-}
-
-@keyframes rolldown {
-  from{
-    top: 0px;
-  }
-  to{
-    top: -550px;
-  }
 }
