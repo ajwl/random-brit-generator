@@ -5,8 +5,9 @@ const Spinner = (props) => {
   console.log("in spinner props", props)
 
   return (
+    <div className="machineBox">
     <div className="container">
-        <div className={`spinner ${props.animate}`}>
+        <div className={`stage ${props.animate}`}>
           <ol className="wheel age">
             <li className="one">18-19</li>
             <li className="two">20-24</li>
@@ -43,6 +44,7 @@ const Spinner = (props) => {
             <li className="nine">Male</li>
             <li className="ten">Female</li>
           </ol>
+        </div>
         </div>
         </div>
   )

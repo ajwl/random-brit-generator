@@ -1,3 +1,5 @@
+/* STYLES STOLENT FROM CODEPEN */
+
 .machine {
   padding: 0 1em;
   display: flex;
@@ -9,21 +11,43 @@
 .machine button {
   flex: 1 1 auto;
 }
-.machine ol {
+ol {
   list-style: none;
+  padding: 0;
 }
-.machine .spinner {
-  max-width: 600px;
-  width: 100%;
-  height: 10em;
-  border: 4px solid gray;
+
+.machineBox {
+  position: absolute;
+  padding: 0;
+  width: 421px;
+  height: 370px;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.container {
+	-webkit-perspective: 800; /* For compatibility with iPhone 3.0, we leave off the units here */
+	-webkit-perspective-origin: 100% 225px;
+	-moz-perspective: 800px;
+	-moz-perspective-origin: 100% 225px;
+	perspective: 800px;
+	perspective-origin: 100% 225px;
+	margin:auto;
+	left: 55px;
+	z-index:99;
+  position: absolute;
+  top: 80px;
+}
+
+.stage {
   margin: 1em 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  overflow: hidden;
   position: relative;
-
   -webkit-transition: -webkit-transform 2s;
   -webkit-transform-style: preserve-3d;
   -moz-transition: -webkit-transform 2s;
@@ -32,12 +56,11 @@
   transform-style: preserve-3d;
 }
 
-.wheel {
+ol.wheel {
   border: 1px solid gray;
-  width: 30%;
-	/*position: relative;*/
+	position: relative;
 	margin: 0 auto;
-	/*height: 50px;*/
+	height: 50px;
 	width: 50px;
 	-webkit-transform-style: preserve-3d;
 	-moz-transform-style: preserve-3d;
@@ -45,20 +68,20 @@
 	margin:0 0 0 10px;
 }
 
-
-/* STYLES STOLENT FROM CODEPEN */
-
-.container {
-	-webkit-perspective: 800; /* For compatibility with iPhone 3.0, we leave off the units here */
-	-webkit-perspective-origin: 50% 225px;
-	-moz-perspective: 800px;
-	-moz-perspective-origin: 50% 225px;
-	perspective: 800px;
-	perspective-origin: 50% 225px;
-	margin:auto;
-	left:100px;
-	z-index:99;
+ol.wheel li{
+  position: absolute;
+  height: 56px;
+  width: 56px;
+  line-height: 56px;
+  text-align: center;
+  color: white;
+  background-color: black;
+  backface-visibility: hidden;
+  transition: -webkit-transform 2s, opacity 2s;
+  border-radius: 12px;
+  box-sizing: border-box;
 }
+
 
 
 
@@ -74,25 +97,17 @@
 .wheel .nine { transform: rotateX(-288deg) translateZ(90px); }
 .wheel .ten { transform: rotateX(-324deg) translateZ(90px); }
 
-.spinner .wheel:first-of-type{
+.stage .wheel:first-of-type{
   left: 0%;
 }
-.spinner .wheel:nth-of-type(2){
+.stage .wheel:nth-of-type(2){
   left: 33%;
 }
-.spinner .wheel:nth-of-type(3){
+.stage .wheel:nth-of-type(3){
   left: 66%;
 }
 
-.spinner .wheel li{
-  color: white;
-  top: 320px;
-  width: 90%;
-  height: 10%;
-  margin-left: 5%;
-  background-image: url(http://r.ddmcdn.com/s_f/o_1/cx_462/cy_245/cw_1349/ch_1349/w_720/APL/uploads/2015/06/caturday-shutterstock_149320799.jpg);
-  background-size: cover;
-}
+
 .machine button {
   background-color: cyan;
   height: 7em;

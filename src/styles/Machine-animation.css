@@ -1,35 +1,46 @@
-.spinner.animate .wheel{
-  animation-iteration-count: infinite;
-  animation-direction: reverse;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-}
-.spinner.animate .wheel{
-  animation-duration: 2s;
-}
-.spinner.slow-to-end .wheel{
-  animation-name: rollstop;
-  animation-duration: 1s;
+html {
+  --agePos: 360deg;
+  --ethnicityPos: 290deg;
+  --genderPos: 170deg;
 }
 
-@keyframes spin1 {
+
+.stage.animate .wheel.age {
+  animation-name: spinAge;
+}
+.stage.animate .wheel.ethnicity {
+  animation-name: spinEthnicity;
+}
+.stage.animate .wheel.gender {
+  animation-name:spinGender;
+}
+
+
+/* ANSWER NEEDS TO BE EXPRESSED AS A 360 DEGREE VARIABLE
+THAT IS THEN FED IN TO CSS TO STOP TURN AT RIGHT POINT*/
+
+/* MUST BE DIVISIBLE BY 360 */
+
+/* myElement.style.setProperty('--element-height', height + 'px') */
+
+/* querySelector('.wheel.age').style.setProperty('--agePos', POS + 'deg') */
+
+@keyframes spinAge {
 	from {transform: rotateX(0);}
-	to { transform: rotateX(287deg); }
+	to { transform: rotateX(var(--agePos)); }
 }
 
-@keyframes spin2 {
+@keyframes spinEthnicity {
 	from {transform: rotateX(0);}
-	to { transform: rotateX(395.5deg); }
+	to { transform: rotateX(var(--ethnicityPos)); }
 }
 
-@keyframes spin3 {
+@keyframes spinGender {
 	from {transform: rotateX(0);}
-	to { transform: rotateX(140deg); }
+	to { transform: rotateX(var(--genderPos)); }
 }
 
-.spinner.animate .wheel .age {-webkit-animation-name:spin1;	-moz-animation-name:spin1;	animation-name: spin1;}
-.spinner.animate .wheel .ethnicity {-webkit-animation-name:spin1 ;	-moz-animation-name:spin1;	animation-name: spin1;}
-.spinner.animate .wheel .gender {	-webkit-animation-name:spin1;	-moz-animation-name:spin1;	animation-name:spin1;}
+
 
 .age {
 	-webkit-animation:2s linear 2 forwards;
