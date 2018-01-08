@@ -22,7 +22,7 @@ ol {
   width: 421px;
   height: 370px;
   right: 0;
-  top: 0;
+  top: 150px;
   left: 0;
   bottom: 0;
   margin: auto;
@@ -39,7 +39,7 @@ ol {
 	left: 55px;
 	z-index:99;
   position: absolute;
-  top: 80px;
+  top: 70px;
 }
 
 .stage {

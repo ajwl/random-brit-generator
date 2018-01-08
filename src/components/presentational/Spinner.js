@@ -3,12 +3,18 @@ import React from "react";
 const Spinner = (props) => {
 
   console.log("in spinner props", props)
+  // querySelector('.wheel.age').style.setProperty('--agePos', POS + 'deg') */
+// style={{agePos: 268 + "deg"}}
 
   return (
-    <div className="machineBox">
+    <div className="machineBox" style={{
+      "--agePos": 268 + "deg",
+      "--ethnicityPos": 268 + "deg",
+      "--genderPos": 268 + "deg"
+    }}>
     <div className="container">
         <div className={`stage ${props.animate}`}>
-          <ol className="wheel age">
+          <ol className="wheel age" >
             <li className="one">18-19</li>
             <li className="two">20-24</li>
             <li className="three">25-29</li>

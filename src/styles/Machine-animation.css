@@ -1,7 +1,7 @@
-html {
+.machineBox {
   --agePos: 360deg;
-  --ethnicityPos: 290deg;
-  --genderPos: 170deg;
+  --ethnicityPos: 360deg;
+  --genderPos: 360deg;
 }
 
 
