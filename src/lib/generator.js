@@ -37,4 +37,13 @@ function sumDemographicProbability(data){
   }, 0)
 }
 
-export {getPeople};
+function getCategories(key){
+  const listOptions = data.reduce((acc,curr) => {
+    acc.push(curr[key]);
+    return acc;
+  }, []);
+  return Array.from( new Set (listOptions)); // dedupe using set
+}
+
+
+export {getPeople, getCategories};
