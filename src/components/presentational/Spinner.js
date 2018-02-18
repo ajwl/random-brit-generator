@@ -1,10 +1,8 @@
 import React from "react";
 
-import {AgeList, GenderList, EthnicityList} from './OutputTiles';
+import {AgeTiles, GenderTiles, EthnicityTiles} from './OutputTiles';
 
 const Spinner = (props) => {
-
-  console.log("in spinner props", props)
 
   return (
     <div className="machineBox" style={{
@@ -14,9 +12,11 @@ const Spinner = (props) => {
     }}>
       <div className="container">
         <div className={`stage ${props.animate}`}>
-          <AgeList categories={props.ageCategories} />
-          <GenderList categories={props.genderCategories} />
-          <EthnicityList categories={props.ethnicityCategories} />
+
+          <AgeTiles categories={props.ageCategories} />
+          <GenderTiles categories={props.genderCategories} />
+          <EthnicityTiles categories={props.ethnicityCategories} />
+
         </div>
       </div>
 

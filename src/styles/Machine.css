@@ -86,16 +86,16 @@ ol.wheel li{
 
 
 /* ---------- wheel styles ------------- */
-.wheel .one { transform: translateZ(90px); }
-.wheel .two { transform: rotateX(-36deg) translateZ(90px); }
-.wheel .three { transform: rotateX(-72deg) translateZ(90px); }
-.wheel .four { transform: rotateX(-108deg) translateZ(90px); }
-.wheel .five { transform: rotateX(-144deg) translateZ(90px); }
-.wheel .six { transform: rotateX(-180deg) translateZ(90px); }
-.wheel .seven { transform: rotateX(-216deg) translateZ(90px); }
-.wheel .eight { transform: rotateX(-252deg) translateZ(90px); }
-.wheel .nine { transform: rotateX(-288deg) translateZ(90px); }
-.wheel .ten { transform: rotateX(-324deg) translateZ(90px); }
+.wheel .one { transform: rotateX(-10deg) translateZ(90px); }
+.wheel .two { transform: rotateX(-46deg) translateZ(90px); }
+.wheel .three { transform: rotateX(-82deg) translateZ(90px); }
+.wheel .four { transform: rotateX(-118deg) translateZ(90px); }
+.wheel .five { transform: rotateX(-154deg) translateZ(90px); }
+.wheel .six { transform: rotateX(-190deg) translateZ(90px); }
+.wheel .seven { transform: rotateX(-226deg) translateZ(90px); }
+.wheel .eight { transform: rotateX(-262deg) translateZ(90px); }
+.wheel .nine { transform: rotateX(-298deg) translateZ(90px); }
+.wheel .ten { transform: rotateX(-334deg) translateZ(90px); }
 
 .stage .wheel:first-of-type{
   left: 0%;

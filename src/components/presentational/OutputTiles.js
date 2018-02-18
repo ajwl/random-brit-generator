@@ -5,26 +5,29 @@ import *  as converter from 'number-to-words';
     return(<li className={converter.toWords(index + 1)} key={index}>{category}</li>)
   }
 
-  const AgeList = (props) => {
+  const AgeTiles = (props) => {
     return(
       <ol className="wheel age">
         {props.categories.map((category, index) => Tile(category, index))}
       </ol>
     )};
 
-  const GenderList = (props) => {
+  const GenderTiles = (props) => {
+    const a = props.categories.slice();
+    const tenCatgeories = props.categories.concat(a).concat(a).concat(a).concat(a);
     return (
       <ol className="wheel gender">
-        {props.categories.map((category, index) => Tile(category, index))}
+        {tenCatgeories.map((category, index) => Tile(category, index))}
       </ol>
     )};
 
-
-  const EthnicityList = (props) => {
+  const EthnicityTiles = (props) => {
+    const a = props.categories.slice();
+    const tenCatgeories = props.categories.concat(a);
     return (
       <ol className="wheel ethnicity">
-        {props.categories.map((category, index) => Tile(category, index))}
+        {tenCatgeories.map((category, index) => Tile(category, index))}
       </ol>
   )};
 
-export {AgeList, GenderList, EthnicityList};
+export {AgeTiles, GenderTiles, EthnicityTiles};

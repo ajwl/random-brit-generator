@@ -2,8 +2,10 @@
   --agePos: 360deg;
   --ethnicityPos: 360deg;
   --genderPos: 360deg;
+  --prevAgePos: 0deg;
+  --prevGenderPos: 0deg;
+  --prevEthnicityPos: 0deg;
 }
-
 
 .stage.animate .wheel.age {
   animation-name: spinAge;
@@ -15,7 +17,6 @@
   animation-name:spinGender;
 }
 
-
 /* ANSWER NEEDS TO BE EXPRESSED AS A 360 DEGREE VARIABLE
 THAT IS THEN FED IN TO CSS TO STOP TURN AT RIGHT POINT*/
 
@@ -26,34 +27,33 @@ THAT IS THEN FED IN TO CSS TO STOP TURN AT RIGHT POINT*/
 /* querySelector('.wheel.age').style.setProperty('--agePos', POS + 'deg') */
 
 @keyframes spinAge {
-	from {transform: rotateX(0);}
+	from {transform: rotateX(var(--prevAgePos));}
 	to { transform: rotateX(var(--agePos)); }
 }
 
 @keyframes spinEthnicity {
-	from {transform: rotateX(0);}
+	from {transform: rotateX(var(--prevEthnicityPos));}
 	to { transform: rotateX(var(--ethnicityPos)); }
 }
 
 @keyframes spinGender {
-	from {transform: rotateX(0);}
+	from {transform: rotateX(var(--prevGenderPos));}
 	to { transform: rotateX(var(--genderPos)); }
 }
 
 
-
 .age {
-	-webkit-animation:2s linear 2 forwards;
-	-moz-animation:2s linear 2 forwards;
-	animation:2s linear 2 forwards;
+	-webkit-animation:2s linear 1 forwards;
+	-moz-animation:2s linear 1 forwards;
+	animation:2s linear 1 forwards;
 }
 .ethnicity {
-	-webkit-animation: 1.5s linear 2 forwards;
-	-moz-animation: 1.5s linear 2 forwards;
-	animation:1.5s linear 2 forwards;
+	-webkit-animation: 1.5s linear 1 forwards;
+	-moz-animation: 1.5s linear 1 forwards;
+	animation:1.5s linear 1 forwards;
 }
 .gender {
-	-webkit-animation:1s linear 2 forwards;
-	-moz-animation:1s linear 2 forwards;
-	animation:1s linear 2 forwards;
+	-webkit-animation:1s linear 1 forwards;
+	-moz-animation:1s linear 1 forwards;
+	animation:1s linear 1 forwards;
 }
