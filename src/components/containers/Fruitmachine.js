@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import ReactDOM from "react-dom"
 import '../../styles/App.css';
 import '../../styles/Machine.css';
 import '../../styles/Machine-animation.css';
@@ -10,51 +9,72 @@ class Fruitmachine extends Component {
   constructor(props){
     super(props);
     this.state = {
-      gender: 'Female',
-      age: '18-19',
-      ethnicity: 'White',
+      gender: '',
+      age: '',
+      ethnicity: '',
+
+      prevGender: 'female',
+      prevAge: '18-19',
+      prevEthnicity: 'white',
+
       animate: '',
+      animationRunning: false,
     };
-    this.rerunSpinner = this.rerunSpinner.bind(this);
-    this.clearAnimation = this.clearAnimation.bind(this);
+    this.runSpinner = this.runSpinner.bind(this);
     this.ageCategories = getCategories('age');
     this.ethnicityCategories = getCategories('ethnicity');
     this.genderCategories = getCategories('gender');
+    this.animationEnded = this.animationEnded.bind(this);
   }
 
-
-  rerunSpinner(){
-
-    this.setState({animate: ''});
-    // let mountNode = ReactDOM.findDOMNode(this.refs.machinebody);
-    // ReactDOM.unmountComponentAtNode(mountNode);
+  runSpinner(){
 
     const person = getPeople(1)[0];
+    console.log(">>> The person is: ", person);
+    console.log("THE ANIMATION STARTED!!!!!!!!");
 
     this.setState({gender: person.gender});
     this.setState({age: person.age});
     this.setState({ethnicity: person.ethnicity});
     this.setState({animate: 'animate'});
+
+    // this.setState({prevGender: ''});
+    // this.setState({prevAge: ''});
+    // this.setState({prevEthnicity: ''});
+    this.setState({animationRunning: true});
+
   }
 
-  clearAnimation(){
-    this.setState({animate: ''});
+  animationEnded(){
+    console.log("THE ANIMATION ENDED!!!!!!!!");
+    this.setState({prevGender: this.state.gender});
+    this.setState({prevAge: this.state.age});
+    this.setState({prevEthnicity: this.state.ethnicity});
+
+    this.setState({animationRunning: false});
   }
 
   render(){
     return(
       <div className="App">
         <Machine
-          ref="machinebody"
-          rerunSpinner={this.rerunSpinner}
-          clearAnimation={this.clearAnimation}
           gender={this.state.gender}
           age={this.state.age}
           ethnicity={this.state.ethnicity}
-          animate={this.state.animate}
+
+          prevGender={this.state.prevGender}
+          prevAge={this.state.prevAge}
+          prevEthnicity={this.state.prevEthnicity}
+
           ageCategories={this.ageCategories}
           genderCategories={this.genderCategories}
           ethnicityCategories={this.ethnicityCategories}
+
+          rerunSpinner={this.runSpinner}
+          animationEnded={this.animationEnded}
+          animationRunning={this.state.animationRunning}
+          animate={this.state.animate}
+
         />
       </div>
     )

@@ -77,11 +77,10 @@ ol.wheel li{
   color: white;
   background-color: black;
   backface-visibility: hidden;
-  transition: -webkit-transform 2s, opacity 2s;
+  transition: transform 2s, opacity 2s;
   border-radius: 12px;
   box-sizing: border-box;
 }
-
 
 
 
@@ -113,4 +112,8 @@ ol.wheel li{
   height: 7em;
   width: 7em;
   margin: 0 2em;
+}
+
+.machine button.animationRunning {
+  background-color: gray;
 }
