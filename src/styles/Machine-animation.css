@@ -1,57 +1,43 @@
-.machineBox {
-  --agePos: 360deg;
-  --ethnicityPos: 360deg;
-  --genderPos: 360deg;
-  --prevAgePos: 0deg;
-  --prevGenderPos: 0deg;
-  --prevEthnicityPos: 0deg;
-}
 
-.stage.animate.animationRunning .wheel.age {
+.stage.animationRunning .wheel.age {
   animation-name: spinAge;
 }
-.stage.animate.animationRunning .wheel.age {
-  animation-name: spinAge;
-}
-.stage.animate.animationRunning .wheel.ethnicity {
+.stage.animationRunning .wheel.ethnicity {
   animation-name: spinEthnicity;
 }
-.stage.animate.animationRunning .wheel.gender {
+.stage.animationRunning .wheel.gender {
   animation-name:spinGender;
 }
 
-/* add back in to persist state */
-.stage.animate .wheel.age {
+/* Use this to persist the state of the previous person, when animation is paused */
+.stage.animationPaused .wheel.age {
   transform: rotateX(var(--prevAgePos));
 }
-.stage.animate .wheel.ethnicity {
+.stage.animationPaused .wheel.ethnicity {
   transform: rotateX(var(--prevEthnicityPos));
 }
-.stage.animate .wheel.gender {
+.stage.animationPaused .wheel.gender {
   transform: rotateX(var(--prevGenderPos));
 }
+
 
 /* ANSWER NEEDS TO BE EXPRESSED AS A 360 DEGREE VARIABLE
 THAT IS THEN FED IN TO CSS TO STOP TURN AT RIGHT POINT*/
 
 @keyframes spinAge {
-	/* from {transform: rotateX(var(--prevAgePos));} */
 	to { transform: rotateX(var(--agePos)); }
 }
 
 @keyframes spinEthnicity {
-	/* from {transform: rotateX(var(--prevEthnicityPos));} */
 	to { transform: rotateX(var(--ethnicityPos)); }
 }
 
 @keyframes spinGender {
-	/* from {transform: rotateX(var(--prevGenderPos));} */
 	to { transform: rotateX(var(--genderPos)); }
 }
 
+
 /* Wheel with longest duration should have onAnimationEnd attached to it */
-
-
 .age {
 	-webkit-animation:2s linear 1 forwards;
 	-moz-animation:2s linear 1 forwards;

@@ -19,7 +19,7 @@ const Spinner = (props) => {
 
     }}>
       <div className="container">
-        <div className={`stage ${props.animate} ${props.animationRunning ? 'animationRunning' : ''}`}>
+        <div className={`stage ${props.animationRunning}`}>
 
           <AgeTiles categories={props.ageCategories} animationEnded={props.animationEnded}/>
           <GenderTiles categories={props.genderCategories} />

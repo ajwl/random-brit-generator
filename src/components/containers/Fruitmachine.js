@@ -13,36 +13,37 @@ class Fruitmachine extends Component {
       age: '',
       ethnicity: '',
 
-      prevGender: 'female',
+      prevGender: 'Female',
       prevAge: '18-19',
-      prevEthnicity: 'white',
+      prevEthnicity: 'White',
 
-      animate: '',
-      animationRunning: false,
+      animationRunning: 'animationPaused',
     };
     this.runSpinner = this.runSpinner.bind(this);
+    this.generatePerson = this.generatePerson.bind(this);
     this.ageCategories = getCategories('age');
     this.ethnicityCategories = getCategories('ethnicity');
     this.genderCategories = getCategories('gender');
     this.animationEnded = this.animationEnded.bind(this);
   }
 
+  componentWillMount(){
+    console.log('component mount ran');
+    this.generatePerson();
+    this.setState({animationRunning: 'animationRunning'});
+  }
+
   runSpinner(){
+    this.generatePerson();
+    console.log("ANIMATION STARTED");
+    this.setState({animationRunning: 'animationRunning'});
+  }
 
+  generatePerson(){
     const person = getPeople(1)[0];
-    console.log(">>> The person is: ", person);
-    console.log("THE ANIMATION STARTED!!!!!!!!");
-
     this.setState({gender: person.gender});
     this.setState({age: person.age});
     this.setState({ethnicity: person.ethnicity});
-    this.setState({animate: 'animate'});
-
-    // this.setState({prevGender: ''});
-    // this.setState({prevAge: ''});
-    // this.setState({prevEthnicity: ''});
-    this.setState({animationRunning: true});
-
   }
 
   animationEnded(){
@@ -51,7 +52,7 @@ class Fruitmachine extends Component {
     this.setState({prevAge: this.state.age});
     this.setState({prevEthnicity: this.state.ethnicity});
 
-    this.setState({animationRunning: false});
+    this.setState({animationRunning: 'animationPaused'});
   }
 
   render(){
@@ -73,7 +74,6 @@ class Fruitmachine extends Component {
           rerunSpinner={this.runSpinner}
           animationEnded={this.animationEnded}
           animationRunning={this.state.animationRunning}
-          animate={this.state.animate}
 
         />
       </div>

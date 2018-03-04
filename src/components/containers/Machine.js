@@ -1,15 +1,15 @@
-import React, {Component, PureComponent} from "react";
+import React, {Component} from "react";
 import Spinner from '../presentational/Spinner';
 import {getPosition} from '../../lib/getPositions';
 // import Button from './Button';
 
-class Machine extends PureComponent {
+class Machine extends Component {
   constructor(props){
     super(props);
     this.state = {
-      ageDeg: -10,
-      ethnicityDeg: -10,
-      genderDeg: -10,
+      ageDeg: 0,
+      ethnicityDeg: 0,
+      genderDeg: 0,
     };
     this.calculateDegree = this.calculateDegree.bind(this);
     this.positionToDegree = this.positionToDegree.bind(this);
@@ -20,7 +20,7 @@ class Machine extends PureComponent {
   }
 
   calculateDegree (){
-    console.log("In Machine props are:", this.props.gender, this.props.age, this.props.ethnicity)
+    console.log("In Machine props are:", this.props);
 
     // set current values
     const agePosition = getPosition(this.props.age, this.props.ageCategories);
@@ -51,8 +51,8 @@ class Machine extends PureComponent {
   }
 
   positionToDegree(pos){
-    const deg = pos !== 0 ? (pos * 36) : 0;
-    return deg; // number of degrees for each option, ie 360 deg / 10 options
+    const deg = pos !== 0 ? (pos * 36) : 0; // number of degrees for each option, ie 360 deg / 10 options
+    return deg + 360; // add a complete turn first to give more spin
   }
 
 
@@ -64,9 +64,6 @@ class Machine extends PureComponent {
           age={this.props.age}
           ethnicity={this.props.ethnicity}
           gender={this.props.gender}
-          ageCategories={this.props.ageCategories}
-          genderCategories={this.props.genderCategories}
-          ethnicityCategories={this.props.ethnicityCategories}
 
           ageDeg={this.state.ageDeg}
           ethnicityDeg={this.state.ethnicityDeg}
@@ -76,13 +73,20 @@ class Machine extends PureComponent {
           prevEthnicityDeg={this.state.prevEthnicityDeg}
           prevGenderDeg={this.state.prevGenderDeg}
 
-          animate={this.props.animate}
+          ageCategories={this.props.ageCategories}
+          genderCategories={this.props.genderCategories}
+          ethnicityCategories={this.props.ethnicityCategories}
+
           animationRun={this.props.animationRun}
           animationEnded={this.props.animationEnded}
           animationRunning={this.props.animationRunning}
         />
         <div className="buttons">
-          <button onClick={this.props.rerunSpinner} className={this.props.animationRunning ? 'animationRunning' : ''} id="startButton">Run the machine</button>
+          <button onClick={this.props.rerunSpinner}
+                  className={this.props.animationRunning}
+                  id="startButton">
+            <span></span>
+          </button>
         </div>
       </div>
     )
