@@ -12,12 +12,11 @@ class Fruitmachine extends Component {
       gender: '',
       age: '',
       ethnicity: '',
-
       prevGender: 'Female',
       prevAge: '18-19',
       prevEthnicity: 'White',
-
       animationRunning: 'animationPaused',
+      area: ''
     };
     this.runSpinner = this.runSpinner.bind(this);
     this.generatePerson = this.generatePerson.bind(this);
@@ -25,10 +24,10 @@ class Fruitmachine extends Component {
     this.ethnicityCategories = getCategories('ethnicity');
     this.genderCategories = getCategories('gender');
     this.animationEnded = this.animationEnded.bind(this);
+    this.setArea = this.setArea.bind(this);
   }
 
   componentWillMount(){
-    console.log('component mount ran');
     this.generatePerson();
     this.setState({animationRunning: 'animationRunning'});
   }
@@ -40,7 +39,7 @@ class Fruitmachine extends Component {
   }
 
   generatePerson(){
-    const person = getPeople(1)[0];
+    const person = getPeople(1, this.state.area)[0];
     this.setState({gender: person.gender});
     this.setState({age: person.age});
     this.setState({ethnicity: person.ethnicity});
@@ -53,6 +52,11 @@ class Fruitmachine extends Component {
     this.setState({prevEthnicity: this.state.ethnicity});
 
     this.setState({animationRunning: 'animationPaused'});
+    // putPersonInList();
+  }
+
+  setArea(area){
+    this.setState({area: area})
   }
 
   render(){
@@ -74,6 +78,7 @@ class Fruitmachine extends Component {
           rerunSpinner={this.runSpinner}
           animationEnded={this.animationEnded}
           animationRunning={this.state.animationRunning}
+          setArea={this.setArea}
 
         />
       </div>

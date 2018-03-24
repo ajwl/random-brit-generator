@@ -4,9 +4,6 @@ import {AgeTiles, GenderTiles, EthnicityTiles} from './OutputTiles';
 
 const Spinner = (props) => {
 
-  console.log("previous age deg:", props.prevAgeDeg)
-  console.log("current age deg:", props.ageDeg)
-
   return (
     <div className="machineBox" style={{
       "--agePos": `${props.ageDeg}deg`,

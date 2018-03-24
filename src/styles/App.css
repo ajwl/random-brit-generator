@@ -59,6 +59,21 @@ ul li {
   margin: .2em 0;
 }
 
+.geoButtons {
+  margin-top: 1em;
+  display: flex;
+}
+.geoButtons button {
+  width: 10em;
+  height: 7em;
+  flex: auto;
+  flex-direction: row;
+  background-color: #dfdfdf;
+}
+.geoButtons button.selected {
+  background-color: #a8a8a8;
+}
+
 input.people-input {
   outline: none;
   max-width: 10em;

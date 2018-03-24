@@ -1,6 +1,9 @@
 import React, {Component} from "react";
 import Spinner from '../presentational/Spinner';
 import {getPosition} from '../../lib/getPositions';
+import {MachineList} from '../presentational/MachineList';
+import {calculateSummary} from '../../lib/calculateSummary';
+import {AreaButton} from '../presentational/AreaButton.js';
 // import Button from './Button';
 
 class Machine extends Component {
@@ -10,18 +13,27 @@ class Machine extends Component {
       ageDeg: 0,
       ethnicityDeg: 0,
       genderDeg: 0,
+      allPeople: [],
+      summary: {},
+      area: ''
     };
     this.calculateDegree = this.calculateDegree.bind(this);
     this.positionToDegree = this.positionToDegree.bind(this);
+    this.putPersonInList = this.putPersonInList.bind(this);
+    this.handleGeographyChange = this.handleGeographyChange.bind(this);
   }
 
   componentWillReceiveProps(){
     this.calculateDegree();
   }
 
-  calculateDegree (){
-    console.log("In Machine props are:", this.props);
+  handleGeographyChange(e){
+    let geoArea = e.target.id;
+    this.props.setArea(geoArea);
+    this.setState({area: geoArea })
+  }
 
+  calculateDegree (){
     // set current values
     const agePosition = getPosition(this.props.age, this.props.ageCategories);
     const ethnicityPosition = getPosition(this.props.ethnicity, this.props.ethnicityCategories);
@@ -48,6 +60,10 @@ class Machine extends Component {
     this.setState({'prevEthnicityDeg': prevEthnicityDegree})
     this.setState({'prevGenderDeg': prevGenderDegree})
 
+    // delay before appending li, so it doesn't arrive before the runSpinner
+    if(this.props.animationRunning === 'animationPaused'){
+      setTimeout(() => this.putPersonInList(), 2000);
+    }
   }
 
   positionToDegree(pos){
@@ -55,11 +71,23 @@ class Machine extends Component {
     return deg + 360; // add a complete turn first to give more spin
   }
 
+  putPersonInList(){
+    const {prevAge, prevGender, prevEthnicity} = this.props;
+    const selectedPerson = {age: prevAge, gender: prevGender, ethnicity: prevEthnicity};
+    const currentPeople = (this.state.allPeople);
+    currentPeople.unshift(selectedPerson);
+  }
+
+  sumUpPeople(){
+    const sumObj = calculateSummary(this.state.allPeople);
+    this.setState({'summary': sumObj});
+  }
 
   render(){
     return (
       <div className="machine">
         <h2> Intersectionality fruitmachine</h2>
+        <AreaButton getArea={this.handleGeographyChange} isLondon={this.state.area === 'london'}/>
         <Spinner
           age={this.props.age}
           ethnicity={this.props.ethnicity}
@@ -77,7 +105,6 @@ class Machine extends Component {
           genderCategories={this.props.genderCategories}
           ethnicityCategories={this.props.ethnicityCategories}
 
-          animationRun={this.props.animationRun}
           animationEnded={this.props.animationEnded}
           animationRunning={this.props.animationRunning}
         />
@@ -87,6 +114,11 @@ class Machine extends Component {
                   id="startButton">
             <span></span>
           </button>
+          <ul>
+            <MachineList
+              people={this.state.allPeople}
+            />
+          </ul>
         </div>
       </div>
     )
