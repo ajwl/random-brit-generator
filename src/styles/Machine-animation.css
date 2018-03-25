@@ -1,0 +1,55 @@
+
+.stage.animationRunning .wheel.age {
+  animation-name: spinAge;
+}
+.stage.animationRunning .wheel.ethnicity {
+  animation-name: spinEthnicity;
+}
+.stage.animationRunning .wheel.gender {
+  animation-name:spinGender;
+}
+
+/* Use this to persist the state of the previous person, when animation is paused */
+.stage.animationPaused .wheel.age {
+  transform: rotateX(var(--prevAgePos));
+}
+.stage.animationPaused .wheel.ethnicity {
+  transform: rotateX(var(--prevEthnicityPos));
+}
+.stage.animationPaused .wheel.gender {
+  transform: rotateX(var(--prevGenderPos));
+}
+
+
+/* ANSWER NEEDS TO BE EXPRESSED AS A 360 DEGREE VARIABLE
+THAT IS THEN FED IN TO CSS TO STOP TURN AT RIGHT POINT*/
+
+@keyframes spinAge {
+	to { transform: rotateX(var(--agePos)); }
+}
+
+@keyframes spinEthnicity {
+	to { transform: rotateX(var(--ethnicityPos)); }
+}
+
+@keyframes spinGender {
+	to { transform: rotateX(var(--genderPos)); }
+}
+
+
+/* Wheel with longest duration should have onAnimationEnd attached to it */
+.age {
+	-webkit-animation:2s linear 1 forwards;
+	-moz-animation:2s linear 1 forwards;
+	animation: 2s linear 1 forwards;
+}
+.ethnicity {
+	-webkit-animation: 1.5s linear 1 forwards;
+	-moz-animation: 1.5s linear 1 forwards;
+	animation:1.5s linear 1 forwards;
+}
+.gender {
+	-webkit-animation:1s linear 1 forwards;
+	-moz-animation:1s linear 1 forwards;
+	animation:1s linear 1 forwards;
+}

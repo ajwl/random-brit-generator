@@ -1,15 +1,31 @@
 import React from "react";
 
+import {AgeTiles, GenderTiles, EthnicityTiles} from './OutputTiles';
+
 const Spinner = (props) => {
 
-  console.log("in spinner props", props)
-
   return (
-      <div className={`spinner ${props.animate}`}>
-        <div className="window"><span className="quality">{props.age}</span></div>
-        <div className="window"><span className="quality">{props.ethnicity}</span></div>
-        <div className="window"><span className="quality">{props.gender}</span></div>
+    <div className="machineBox" style={{
+      "--agePos": `${props.ageDeg}deg`,
+      "--ethnicityPos": `${props.ethnicityDeg}deg`,
+      "--genderPos": `${props.genderDeg}deg`,
+
+      "--prevAgePos": `${props.prevAgeDeg}deg`,
+      "--prevEthnicityPos": `${props.prevEthnicityDeg}deg`,
+      "--prevGenderPos": `${props.prevGenderDeg}deg`,
+
+    }}>
+      <div className="container">
+        <div className={`stage ${props.animationRunning}`}>
+
+          <AgeTiles categories={props.ageCategories} animationEnded={props.animationEnded}/>
+          <GenderTiles categories={props.genderCategories} />
+          <EthnicityTiles categories={props.ethnicityCategories} />
+
+        </div>
       </div>
+
+    </div>
   )
 }
 

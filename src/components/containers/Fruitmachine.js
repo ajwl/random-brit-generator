@@ -1,55 +1,82 @@
 import React, {Component} from "react";
-import '../../styles/App.css';
+import face from '../../images/face.png';
+import '../../styles/main.css';
 import '../../styles/Machine.css';
-import Machine from '../presentational/Machine';
-import {getPeople} from '../../lib/generator.js';
-
-// testing out this css animation helper
-import EnsureAnimation from 'ensure-animation';
-const spinner = new EnsureAnimation('.spinner');
-
+import '../../styles/Machine-animation.css';
+import Machine from './Machine.js';
+import {getPeople, getCategories} from '../../lib/generator.js';
+import {AreaButton} from '../presentational/AreaButton.js';
+import {Menu} from '../presentational/Menu';
 
 class Fruitmachine extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      gender: 'woman',
-      age: '30-35',
-      ethnicity: 'black',
-      animate: '',
+      gender: '',
+      age: '',
+      ethnicity: '',
+      prevGender: 'Female',
+      prevAge: '18-19',
+      prevEthnicity: 'White',
+      animationRunning: 'animationPaused',
+      area: ''
     };
-    this.rerunSpinner = this.rerunSpinner.bind(this);
-    this.clearAnimation = this.clearAnimation.bind(this);
+    this.runSpinner = this.runSpinner.bind(this);
+    this.generatePerson = this.generatePerson.bind(this);
+    this.ageCategories = getCategories('age');
+    this.ethnicityCategories = getCategories('ethnicity');
+    this.genderCategories = getCategories('gender');
+    this.animationEnded = this.animationEnded.bind(this);
+    this.handleAreaChange = this.handleAreaChange.bind(this);
   }
 
-  rerunSpinner(){
-    const person = getPeople(1)[0];
+  componentWillMount() {
+    this.generatePerson();
+    this.setState({animationRunning: 'animationRunning'});
+  }
+
+  runSpinner() {
+    this.generatePerson();
+    console.log("ANIMATION STARTED");
+    this.setState({animationRunning: 'animationRunning'});
+  }
+
+  generatePerson() {
+    const person = getPeople(1, this.state.area)[0];
     this.setState({gender: person.gender});
     this.setState({age: person.age});
     this.setState({ethnicity: person.ethnicity});
-    this.setState({animate: 'animate'});
-
-    console.log(spinner);
-    spinner.restart();
   }
 
-  clearAnimation(){
-    console.log('this ran')
-    spinner.finish()
-    // this.setState({animate: ''});
+  animationEnded() {
+    console.log("THE ANIMATION ENDED!!!!!!!!");
+    this.setState({prevGender: this.state.gender});
+    this.setState({prevAge: this.state.age});
+    this.setState({prevEthnicity: this.state.ethnicity});
+
+    this.setState({animationRunning: 'animationPaused'});
   }
 
-  render(){
-    return(
-      <div className="App">
-        <Machine
-          rerunSpinner={this.rerunSpinner}
-          clearAnimation={this.clearAnimation}
-          gender={this.state.gender}
-          age={this.state.age}
-          ethnicity={this.state.ethnicity}
-          animate={this.state.animate}
-        />
+  handleAreaChange(e) {
+    let geoArea = e.target.id;
+    this.setState({area: geoArea})
+  }
+
+  render() {
+    return (
+      <div className="App fruitmachine">
+        <Menu/>
+        <div className="content">
+          <div className="App-header">
+            <img src={face} className="App-top-image" alt="logo"/>
+            <h2>Intersectionality fruitmachine</h2>
+            <span>*According to demographic data from England & Wales 2011</span>
+          </div>
+          <div className="App-container">
+            <AreaButton getArea={this.handleAreaChange} isLondon={this.state.area === 'london'}/>
+            <Machine gender={this.state.gender} age={this.state.age} ethnicity={this.state.ethnicity} prevGender={this.state.prevGender} prevAge={this.state.prevAge} prevEthnicity={this.state.prevEthnicity} ageCategories={this.ageCategories} genderCategories={this.genderCategories} ethnicityCategories={this.ethnicityCategories} rerunSpinner={this.runSpinner} animationEnded={this.animationEnded} animationRunning={this.state.animationRunning}/>
+          </div>
+        </div>
       </div>
     )
   }

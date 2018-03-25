@@ -1,90 +1,128 @@
+/* 3D STYLES STOLENT FROM CODEPEN */
+
 .machine {
   padding: 0 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content:flex-start;
 }
-.machine div,
+.machine ol,
 .machine h2,
 .machine button {
   flex: 1 1 auto;
 }
-.machine .spinner {
-  max-width: 600px;
-  width: 100%;
-  height: 10em;
-  border: 4px solid gray;
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+.machineBox {
+  position: relative;
+  padding: 0;
+  width: 421px;
+  height: 230px;
+  right: 0;
+  top: 20px;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.container {
+	-webkit-perspective: 800; /* For compatibility with iPhone 3.0, we leave off the units here */
+	-webkit-perspective-origin: 100% 225px;
+	-moz-perspective: 800px;
+	-moz-perspective-origin: 100% 225px;
+	perspective: 800px;
+	perspective-origin: 100% 225px;
+	margin:auto;
+	left: 55px;
+	z-index:99;
+  position: absolute;
+  top: 70px;
+}
+
+.stage {
   margin: 1em 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  overflow: hidden;
-  position: relative
-}
-.spinner .window{
-  background-color: pink;
-  width: 30%;
-  border: 1px solid gray;
-  height: 700px;
-  position: absolute;
-  top: -320px;
-  background-image: url(http://r.ddmcdn.com/s_f/o_1/cx_462/cy_245/cw_1349/ch_1349/w_720/APL/uploads/2015/06/caturday-shutterstock_149320799.jpg);
-  background-size: contain;
-  backgroud-repeat: repeat-y;
-}
-.spinner .window span{
-  color: white;
-  position: absolute;
-  top: 320px;
-}
-.spinner.animate .window{
-  animation-iteration-count: 6;
-  animation-direction: reverse;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-  animation-name: rolldown;
-}
-.spinner.animate .window:first-of-type{
-  animation-duration: 1.5s;
-}
-.spinner.animate .window:nth-of-type(2){
-  animation-duration: 4s;
-}
-.spinner.animate .window:nth-of-type(3){
-  animation-duration: 4.5s;
-}
-.spinner.slow-to-end .window{
-  animation-name: rollstop;
-  animation-duration: 3s;
+  position: relative;
+  -webkit-transition: -webkit-transform 2s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transition: -webkit-transform 2s;
+  -moz-transform-style: preserve-3d;
+  transition: -webkit-transform 2s;
+  transform-style: preserve-3d;
 }
 
-.spinner .window:first-of-type{
+ol.wheel {
+	position: relative;
+	margin: 0 auto;
+	height: 50px;
+	width: 50px;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	margin:0 0 0 10px;
+}
+
+ol.wheel li{
+  position: absolute;
+  height: 56px;
+  width: 56px;
+  line-height: 56px;
+  text-align: center;
+  color: white;
+  background-color: black;
+  backface-visibility: hidden;
+  transition: transform 2s, opacity 2s;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+
+/* ---------- wheel styles ------------- */
+.wheel .one { transform: rotateX(-10deg) translateZ(90px); }
+.wheel .two { transform: rotateX(-46deg) translateZ(90px); }
+.wheel .three { transform: rotateX(-82deg) translateZ(90px); }
+.wheel .four { transform: rotateX(-118deg) translateZ(90px); }
+.wheel .five { transform: rotateX(-154deg) translateZ(90px); }
+.wheel .six { transform: rotateX(-190deg) translateZ(90px); }
+.wheel .seven { transform: rotateX(-226deg) translateZ(90px); }
+.wheel .eight { transform: rotateX(-262deg) translateZ(90px); }
+.wheel .nine { transform: rotateX(-298deg) translateZ(90px); }
+.wheel .ten { transform: rotateX(-334deg) translateZ(90px); }
+
+.stage .wheel:first-of-type{
   left: 0%;
 }
-.spinner .window:nth-of-type(2){
+.stage .wheel:nth-of-type(2){
   left: 33%;
 }
-.spinner .window:nth-of-type(3){
+.stage .wheel:nth-of-type(3){
   left: 66%;
 }
+
 .machine button {
   background-color: cyan;
   height: 7em;
   width: 7em;
-  margin: 0 2em;
+  margin: 2em 2em;
+  border-radius: 50%;
 }
 
-@keyframes rollstop {
-  to{
-    top: -300px;
-  }
+.machine button.animationRunning {
+  background-color: gray;
+}
+.machine button.animationRunning span:after {
+  content: "Loading";
+}
+.machine button.animationPaused span:after {
+  content: "Run the machine";
 }
 
-@keyframes rolldown {
-  from{
-    top: 0px;
-  }
-  to{
-    top: -550px;
-  }
+.machine button:focus {
+  outline: none;
 }

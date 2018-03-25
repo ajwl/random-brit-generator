@@ -3,3 +3,90 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.summary {
+  background-color: black;
+  color: white;
+  padding: .5em 1em;
+}
+
+nav.menu {
+  width: 100%
+}
+
+nav.menu ul{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+nav.menu li {
+  flex: auto;
+  flex-direction: row;
+}
+nav.menu li a {
+  text-decoration: none;
+  color: gray;
+}
+
+.App {
+  text-align: center;
+}
+
+.generator .App-top-image {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.fruitmachine .App-top-image {
+  animation: App-logo-spin infinite 6s linear;
+  height: 60px;
+}
+
+.App-header {
+  background-color: #222;
+  padding: 3.5em .5em 2em .5em;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.App-header h2{
+  margin-bottom: 2px;
+}
+.App-header span{
+  font-size: .6em;
+}
+
+.App-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.App-container ul,
+.App-container div,
+.App-container form {
+  flex: 0 1 auto;
+}
+
+.geoButtons {
+  margin-top: 1em;
+  display: flex;
+}
+.geoButtons button {
+  width: 10em;
+  height: 7em;
+  flex: auto;
+  flex-direction: row;
+  background-color:#a8a8a8;
+  outline: none;
+}
+.geoButtons button.selected {
+  background-color: #4caf50;
+}

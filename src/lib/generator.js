@@ -1,19 +1,22 @@
-import * as data from '../data/allpple.json';
+import * as ewData from '../data/allpple.json';
+import * as ldData from '../data/allpple-london.json'
 
-function getPeople(num){
+function getPeople(num, area){
+
+  const data = area === 'london' ? ldData : ewData;
 
   const total = sumDemographicProbability(data);
   const people = [];
 
   for(let i = 0; i < num; i++){
     let personNum = generateRandomNumber(total);
-    let person = findPerson(personNum);
+    let person = findPerson(personNum, data);
     people.push(person);
   }
   return people;
 };
 
-function findPerson(personNum){
+function findPerson(personNum, data){
   let personSegment;
   let popSegmentsSummed = 0;
   for(let i = 0; i < data.length; i++){
@@ -37,4 +40,15 @@ function sumDemographicProbability(data){
   }, 0)
 }
 
-export {getPeople};
+function getCategories(key, area){
+  const data = area === 'london' ? ldData : ewData;
+
+  const listOptions = data.reduce((acc,curr) => {
+    acc.push(curr[key]);
+    return acc;
+  }, []);
+  return Array.from( new Set (listOptions)); // dedupe using set
+}
+
+
+export {getPeople, getCategories};
