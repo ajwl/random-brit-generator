@@ -74,7 +74,19 @@ class Fruitmachine extends Component {
           </div>
           <div className="App-container">
             <AreaButton getArea={this.handleAreaChange} isLondon={this.state.area === 'london'}/>
-            <Machine gender={this.state.gender} age={this.state.age} ethnicity={this.state.ethnicity} prevGender={this.state.prevGender} prevAge={this.state.prevAge} prevEthnicity={this.state.prevEthnicity} ageCategories={this.ageCategories} genderCategories={this.genderCategories} ethnicityCategories={this.ethnicityCategories} rerunSpinner={this.runSpinner} animationEnded={this.animationEnded} animationRunning={this.state.animationRunning}/>
+
+            <Machine gender={this.state.gender}
+              age={this.state.age}
+              ethnicity={this.state.ethnicity}
+              prevGender={this.state.prevGender}
+              prevAge={this.state.prevAge}
+              prevEthnicity={this.state.prevEthnicity}
+              ageCategories={this.ageCategories}
+              genderCategories={this.genderCategories}
+              ethnicityCategories={this.ethnicityCategories}
+              rerunSpinner={this.runSpinner}
+              animationEnded={this.animationEnded}
+              animationRunning={this.state.animationRunning} />
           </div>
         </div>
       </div>
