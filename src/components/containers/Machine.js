@@ -12,15 +12,17 @@ class Machine extends Component {
       ethnicityDeg: 0,
       genderDeg: 0,
       allPeople: [],
-      summary: {},
-      area: ''
+      summary: {}
     };
     this.calculateDegree = this.calculateDegree.bind(this);
     this.positionToDegree = this.positionToDegree.bind(this);
     this.putPersonInList = this.putPersonInList.bind(this);
   }
 
-  componentWillReceiveProps(){
+  componentWillReceiveProps(nextProps){
+    console.log("props changed in machine!");
+    console.log("THIS", this.props)
+    console.log("NEXT", nextProps)
     this.calculateDegree();
   }
 
@@ -101,12 +103,9 @@ class Machine extends Component {
           <button onClick={this.props.rerunSpinner}
                   className={this.props.animationRunning}
                   id="startButton">
+                  {this.props.animationRunning === 'animationRunning' ? 'loading' : 'run the machine!'}
           </button>
-          <ul className="results">
-            <MachineList
-              people={this.state.allPeople}
-            />
-          </ul>
+          <MachineList people={this.state.allPeople} />
         </div>
       </div>
     )
