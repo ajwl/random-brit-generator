@@ -6,6 +6,8 @@ import {List} from '../presentational/OutputList.js';
 import {InfoBox} from '../presentational/InfoBox.js';
 import {AreaButton} from '../presentational/AreaButton.js';
 import NumberInput from './NumberInput.js';
+import {SummaryBox} from '../presentational/SummaryBox';
+import {Menu} from '../presentational/Menu';
 
 class App extends Component {
   constructor(props) {
@@ -42,20 +44,21 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App generator">
+        <Menu />
         <div className="App-header">
           <img src={engWales} className="App-top-image" alt="logo"/>
           <h2>Generate random Brits*</h2>
           <span>*According to demographic data from England & Wales 2011</span>
         </div>
         <div className="App-container">
-          <AreaButton getArea={this.handleGeographyChange} isLondon={this.state.area == 'london'}/>
+          <AreaButton getArea={this.handleGeographyChange} isLondon={this.state.area === 'london'}/>
           <NumberInput onSubmit={this.handleSubmit}
             onChange={this.handleNumberChange}
             value ={this.state.numberPeople}
             onFocus = {this.state.handleClear}/>
           <List items={this.state.people} />
-          <InfoBox value={this.state.numberPeople} />
+          <SummaryBox people={this.state.people} />
         </div>
       </div>
     );

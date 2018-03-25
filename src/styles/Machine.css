@@ -126,9 +126,3 @@ ol.wheel li{
 .machine button:focus {
   outline: none;
 }
-
-.machine .summary {
-  background-color: purple;
-  color: white;
-  padding: .5em 1em;
-}

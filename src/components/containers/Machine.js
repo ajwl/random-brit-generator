@@ -3,8 +3,6 @@ import Spinner from '../presentational/Spinner';
 import {getPosition} from '../../lib/getPositions';
 import {MachineList} from '../presentational/MachineList';
 import {calculateSummary} from '../../lib/calculateSummary';
-import {AreaButton} from '../presentational/AreaButton.js';
-// import Button from './Button';
 
 class Machine extends Component {
   constructor(props){
@@ -20,17 +18,10 @@ class Machine extends Component {
     this.calculateDegree = this.calculateDegree.bind(this);
     this.positionToDegree = this.positionToDegree.bind(this);
     this.putPersonInList = this.putPersonInList.bind(this);
-    this.handleGeographyChange = this.handleGeographyChange.bind(this);
   }
 
   componentWillReceiveProps(){
     this.calculateDegree();
-  }
-
-  handleGeographyChange(e){
-    let geoArea = e.target.id;
-    this.props.setArea(geoArea);
-    this.setState({area: geoArea })
   }
 
   calculateDegree (){
@@ -86,8 +77,6 @@ class Machine extends Component {
   render(){
     return (
       <div className="machine">
-        <h2> Intersectionality fruitmachine</h2>
-        <AreaButton getArea={this.handleGeographyChange} isLondon={this.state.area === 'london'}/>
         <Spinner
           age={this.props.age}
           ethnicity={this.props.ethnicity}
@@ -112,9 +101,8 @@ class Machine extends Component {
           <button onClick={this.props.rerunSpinner}
                   className={this.props.animationRunning}
                   id="startButton">
-            <span></span>
           </button>
-          <ul>
+          <ul className="results">
             <MachineList
               people={this.state.allPeople}
             />
