@@ -7,6 +7,7 @@ import Machine from './Machine.js';
 import {getPeople, getCategories} from '../../lib/generator.js';
 import {AreaButton} from '../presentational/AreaButton.js';
 import {Menu} from '../presentational/Menu';
+import {MachineList} from '../presentational/MachineList';
 
 class Fruitmachine extends Component {
   constructor(props) {
@@ -15,11 +16,9 @@ class Fruitmachine extends Component {
       gender: '',
       age: '',
       ethnicity: '',
-      prevGender: 'Female',
-      prevAge: '18-19',
-      prevEthnicity: 'White',
       animationRunning: 'animationPaused',
-      area: ''
+      area: '',
+      allPeople: []
     };
     this.runSpinner = this.runSpinner.bind(this);
     this.generatePerson = this.generatePerson.bind(this);
@@ -28,6 +27,7 @@ class Fruitmachine extends Component {
     this.genderCategories = getCategories('gender');
     this.animationEnded = this.animationEnded.bind(this);
     this.handleAreaChange = this.handleAreaChange.bind(this);
+    this.putPersonInList = this.putPersonInList.bind(this);
   }
 
   componentWillMount() {
@@ -50,17 +50,22 @@ class Fruitmachine extends Component {
 
   animationEnded() {
     console.log("THE ANIMATION ENDED!!!!!!!!");
-    this.setState({prevGender: this.state.gender});
-    this.setState({prevAge: this.state.age});
-    this.setState({prevEthnicity: this.state.ethnicity});
-
     this.setState({animationRunning: 'animationPaused'});
+    this.putPersonInList({gender: this.state.gender, age: this.state.age, ethnicity: this.state.ethnicity})
   }
 
   handleAreaChange(e) {
     let geoArea = e.target.id;
     this.setState({area: geoArea})
   }
+
+  putPersonInList(prev){
+    const {age, gender, ethnicity} = prev;
+    const selectedPerson = {age, gender, ethnicity};
+    const currentPeople = (this.state.allPeople);
+    currentPeople.unshift(selectedPerson);
+  }
+
 
   render() {
     return (
@@ -78,15 +83,15 @@ class Fruitmachine extends Component {
             <Machine gender={this.state.gender}
               age={this.state.age}
               ethnicity={this.state.ethnicity}
-              prevGender={this.state.prevGender}
-              prevAge={this.state.prevAge}
-              prevEthnicity={this.state.prevEthnicity}
               ageCategories={this.ageCategories}
               genderCategories={this.genderCategories}
               ethnicityCategories={this.ethnicityCategories}
               rerunSpinner={this.runSpinner}
               animationEnded={this.animationEnded}
               animationRunning={this.state.animationRunning} />
+
+            <MachineList people={this.state.allPeople} />
+
           </div>
         </div>
       </div>

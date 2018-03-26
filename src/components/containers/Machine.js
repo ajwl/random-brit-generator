@@ -1,8 +1,6 @@
 import React, {Component} from "react";
 import Spinner from '../presentational/Spinner';
 import {getPosition} from '../../lib/getPositions';
-import {MachineList} from '../presentational/MachineList';
-import {calculateSummary} from '../../lib/calculateSummary';
 
 class Machine extends Component {
   constructor(props){
@@ -12,21 +10,16 @@ class Machine extends Component {
       ethnicityDeg: 0,
       genderDeg: 0,
       allPeople: [],
-      summary: {}
     };
     this.calculateDegree = this.calculateDegree.bind(this);
     this.positionToDegree = this.positionToDegree.bind(this);
-    this.putPersonInList = this.putPersonInList.bind(this);
   }
 
   componentWillReceiveProps(nextProps){
-    console.log("props changed in machine!");
-    console.log("THIS", this.props)
-    console.log("NEXT", nextProps)
-    this.calculateDegree();
+    this.calculateDegree(this.props, nextProps);
   }
 
-  calculateDegree (){
+  calculateDegree (prev, current){
     // set current values
     const agePosition = getPosition(this.props.age, this.props.ageCategories);
     const ethnicityPosition = getPosition(this.props.ethnicity, this.props.ethnicityCategories);
@@ -41,9 +34,9 @@ class Machine extends Component {
     this.setState({'genderDeg': genderDegree})
 
     // set previous values
-    const prevAgePosition = getPosition(this.props.prevAge, this.props.ageCategories);
-    const prevEthnicityPosition = getPosition(this.props.prevEthnicity, this.props.ethnicityCategories);
-    const prevGenderPosition = getPosition(this.props.prevGender, this.props.genderCategories);
+    const prevAgePosition = getPosition(prev.age, prev.ageCategories);
+    const prevEthnicityPosition = getPosition(prev.ethnicity, prev.ethnicityCategories);
+    const prevGenderPosition = getPosition(prev.gender, prev.genderCategories);
 
     const prevAgeDegree = this.positionToDegree(prevAgePosition);
     const prevEthnicityDegree = this.positionToDegree(prevEthnicityPosition);
@@ -52,28 +45,11 @@ class Machine extends Component {
     this.setState({'prevAgeDeg': prevAgeDegree})
     this.setState({'prevEthnicityDeg': prevEthnicityDegree})
     this.setState({'prevGenderDeg': prevGenderDegree})
-
-    // delay before appending li, so it doesn't arrive before the runSpinner
-    if(this.props.animationRunning === 'animationPaused'){
-      setTimeout(() => this.putPersonInList(), 2000);
-    }
   }
 
   positionToDegree(pos){
     const deg = pos !== 0 ? (pos * 36) : 0; // number of degrees for each option, ie 360 deg / 10 options
     return deg + 360; // add a complete turn first to give more spin
-  }
-
-  putPersonInList(){
-    const {prevAge, prevGender, prevEthnicity} = this.props;
-    const selectedPerson = {age: prevAge, gender: prevGender, ethnicity: prevEthnicity};
-    const currentPeople = (this.state.allPeople);
-    currentPeople.unshift(selectedPerson);
-  }
-
-  sumUpPeople(){
-    const sumObj = calculateSummary(this.state.allPeople);
-    this.setState({'summary': sumObj});
   }
 
   render(){
@@ -103,9 +79,8 @@ class Machine extends Component {
           <button onClick={this.props.rerunSpinner}
                   className={this.props.animationRunning}
                   id="startButton">
-                  {this.props.animationRunning === 'animationRunning' ? 'loading' : 'run the machine!'}
+                  <span></span>
           </button>
-          <MachineList people={this.state.allPeople} />
         </div>
       </div>
     )
