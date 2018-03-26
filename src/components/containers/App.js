@@ -3,7 +3,6 @@ import engWales from '../../images/eng-wales.png';
 import '../../styles/App.css';
 import {getPeople} from '../../lib/generator.js';
 import {List} from '../presentational/OutputList.js';
-import {InfoBox} from '../presentational/InfoBox.js';
 import {AreaButton} from '../presentational/AreaButton.js';
 import NumberInput from './NumberInput.js';
 import {SummaryBox} from '../presentational/SummaryBox';
@@ -24,7 +23,6 @@ class App extends Component {
 
   handleGeographyChange(e){
     const geoArea = e.target.id;
-    console.log("Geo area", geoArea);
     this.setState({area: geoArea });
   }
 

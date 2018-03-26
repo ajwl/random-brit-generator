@@ -32,6 +32,10 @@ nav.menu li a {
 .App {
   text-align: center;
 }
+.App.info .App-container {
+  text-align: justify;
+  padding: 0 1em;
+}
 
 .generator .App-top-image {
   animation: App-logo-spin infinite 20s linear;
@@ -74,6 +78,8 @@ nav.menu li a {
 .App-container form {
   flex: 0 1 auto;
 }
+
+/* PAGE FURNITURE */
 
 .geoButtons {
   margin-top: 1em;
