@@ -13,8 +13,8 @@ const InfoBox = (props) => {
         <p>
           The people created by the generator and the fruitmachine and their demographic
           characteristics, were generated at random from
-          <a href="https://www.nomisweb.co.uk/census/2011/dc2101ew">
-          2011 Census data for England and Wales</a>. I then split out London data
+          <a href="https://www.nomisweb.co.uk/census/2011/dc2101ew"> 2011 Census data
+          for England and Wales</a>. I then split out London data
           separately on both apps. I have selected only people of working age from 18 to 65.
           The probability of a generated person on this app being a man or woman or black or
           white is matched exactly to the numbers of people with those characteristics counted in the census.

@@ -23,6 +23,7 @@ nav.menu ul{
 nav.menu li {
   flex: auto;
   flex-direction: row;
+  font-size: 1.2em;
 }
 nav.menu li a {
   text-decoration: none;
