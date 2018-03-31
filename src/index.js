@@ -10,7 +10,7 @@ import './styles/main.css';
 ReactDOM.render(
   <BrowserRouter>
     <div>
-      <Route exact path='/' component={App} />
+      <IndexRoute component={App} />
       <Route path='/machine' component={Fruitmachine} />
       <Route path='/info' component={InfoBox} />
     </div>
