@@ -1,7 +1,9 @@
 
 export function calculateSummary(allPeople) {
   const genderSum = allPeople.reduce((acc, curr) => {
-    curr.gender.toLowerCase() === "female" ? acc.f++ : acc.m++;
+    const g = curr.gender.toLowerCase();
+    if(g === "female"){ acc.f++ }
+    else if(g === "male"){ acc.m++ }; 
     return acc;
   },{m: 0, f: 0});
 

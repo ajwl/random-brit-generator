@@ -17,7 +17,7 @@ class Fruitmachine extends Component {
       age: '',
       ethnicity: '',
       animationRunning: 'animationPaused',
-      area: '',
+      area: 'london',
       allPeople: []
     };
     this.runSpinner = this.runSpinner.bind(this);
@@ -31,7 +31,6 @@ class Fruitmachine extends Component {
   }
 
   componentWillMount() {
-    this.generatePerson();
     this.setState({animationRunning: 'animationRunning'});
   }
 
