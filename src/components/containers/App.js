@@ -54,8 +54,10 @@ class App extends Component {
           <NumberInput onSubmit={this.handleSubmit}
             onChange={this.handleNumberChange}
             value ={this.state.numberPeople}
-            onFocus = {this.state.handleClear}/>
+            onFocus = {this.state.handleClear} />
           <List items={this.state.people} />
+
+          <h4><a href="/info">Why I did this</a></h4>
           <SummaryBox people={this.state.people} />
         </div>
       </div>

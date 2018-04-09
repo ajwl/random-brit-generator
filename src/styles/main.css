@@ -29,6 +29,10 @@ nav.menu li a {
   text-decoration: none;
   color: gray;
 }
+nav.menu li a:hover,
+nav.menu li a:active {
+  color: white;
+}
 
 .App {
   text-align: center;
