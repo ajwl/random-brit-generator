@@ -34,6 +34,21 @@ nav.menu li a:active {
   color: white;
 }
 
+.fruitmachine nav.menu li.fruitmachine a{
+  color: white;
+}
+
+.generator nav.menu li.generator a{
+  color: white;
+}
+
+.info nav.menu li.info a{
+  color: white;
+}
+.info h3 {
+  text-align: left;
+}
+
 .App {
   text-align: center;
 }
@@ -82,6 +97,10 @@ nav.menu li a:active {
 .App-container div,
 .App-container form {
   flex: 0 1 auto;
+}
+
+.App-container .info-text{
+  max-width: 30em;
 }
 
 /* PAGE FURNITURE */

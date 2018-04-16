@@ -4,9 +4,9 @@ const Menu = () => {
   return(
     <nav className="menu">
       <ul>
-        <li><a href="/">Generator</a></li>
-        <li><a href="/machine">Fruitmachine</a></li>
-        <li><a href="/info">Infomation</a></li>
+        <li className="generator"><a href="/">Generator</a></li>
+        <li className="fruitmachine"><a href="/machine">Fruitmachine</a></li>
+        <li className="info"><a href="/info">Infomation</a></li>
       </ul>
     </nav>
   )
