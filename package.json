@@ -4,11 +4,11 @@
   "private": true,
   "dependencies": {
     "ensure-animation": "^1.0.0",
-    "number-to-words": "^1.2.3",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
+    "number-to-words": "^1.2.4",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
     "react-transition-group": "^1.2.1"
   },
   "devDependencies": {
