@@ -2,6 +2,7 @@ import * as ewData from '../data/allpple.json';
 import * as ldData from '../data/allpple-london.json'
 
 function getData(area) {
+  console.log("ewData", ewData)
   return (area === 'london' ? ldData.default : ewData.default);
 }
 
